@@ -1,55 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  --dark-color: #131118;
+  --dark-hover-color: #3a344a;
+  --white-color: #fff;
+  --red-color: #f84e2c;
+  --red-medium-color: #f98b75;
+  --red-light-color: #fbdcd6;
+
   margin: 0;
-  font-family: "Lato", serif;
+  font-family: "Jost";
+  line-height: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#d0d6d9, #b1b4ba);
-  color: #d9e2f1;
+  background: var(--white-color);
+  color: var(--dark-color);
   min-height: 100vh;
 }
 
-header {
-  margin: 2rem 0;
-  text-align: center;
+.mt16 {
+  margin-top: 1rem;
 }
 
-header img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  border-radius: 50%;
-  border: 2px solid #758a8a;
-  filter: drop-shadow(0 0 4px rgba(31, 42, 42, 0.5));
+.h2 {
+  font-size: 30px;
+  font-weight: 800;
 }
 
-header h1 {
-  font-family: "Quicksand", sans-serif;
+.h3 {
+  font-size: 20px;
   font-weight: 700;
-  font-size: 3rem;
-  margin: 1rem 0;
-  letter-spacing: 0.2rem;
-  color: #2f4444;
 }
 
-form {
-  width: 90%;
-  max-width: 40rem;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: linear-gradient(180deg, #253c3c, #1d4949);
-  border-radius: 8px;
-  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
-}
-
-.control,
-fieldset {
-  margin: 0.5rem 0;
+.control {
+  margin-bottom: 1rem;
 }
 
 .control.no-margin {
@@ -58,35 +46,30 @@ fieldset {
 
 .control label {
   display: block;
-  font-size: 0.8rem;
-  margin-bottom: 0.2rem;
-  color: #9bafaf;
-  text-transform: uppercase;
-  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .control input {
   display: block;
   width: 100%;
-  max-width: 15rem;
-  padding: 0.5rem;
+  max-width: 445px;
+  padding: 1rem;
   font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #758a8a;
-  background-color: #869999;
-  color: #142020;
+  border-radius: 10px;
+  border: 1px solid var(--dark-color);
 }
 
 .control select {
   display: block;
   width: 100%;
-  max-width: 15rem;
-  padding: 0.5rem;
+  max-width: 454px;
+  padding: 1rem;
   font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #758a8a;
-  background-color: #869999;
-  color: #142020;
+  border-radius: 10px;
+  border: 1px solid var(--dark-color);
+  background-color: transparent;
+  color: var(--dark-color);
 }
 
 .control:has(input[type="checkbox"]) {
@@ -113,7 +96,7 @@ fieldset {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  color: #ffca99;
+  color: var(--red-color);
   height: 0.5rem;
   padding: 0.25rem 0 0 0;
   height: 1.5rem;
@@ -138,7 +121,7 @@ fieldset {
 
 hr {
   margin: 1.5rem 0;
-  border: 1px solid #147b73;
+  border: 1px solid var(--dark-color);
 }
 
 .form-actions {
@@ -147,30 +130,35 @@ hr {
   gap: 1rem;
 }
 
-.button {
-  padding: 0.5rem 1rem;
+.btn {
+  width: 100%;
+  max-width: 445px;
+  height: 56px;
+  padding: 1rem;
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: 10px;
   border: none;
-  background-color: #147b73;
-  color: #d9e2f1;
+  background-color: var(--dark-color);
+  color: var(--white-color);
   cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
-.button:hover,
-.button:focus {
-  background-color: #319890;
+.btn:hover,
+.btn:focus {
+  background-color: var(--dark-hover-color);
 }
 
-.button-flat {
+.btn-flat {
   background-color: transparent;
-  color: #9cbaba;
+  border: 1px solid var(--dark-color);
+  color: var(--dark-color);
 }
 
-.button-flat:hover,
-.button-flat:focus {
-  background-color: transparent;
-  color: #869999;
+.btn-flat:hover,
+.btn-flat:focus {
+  background-color: var(--dark-hover-color);
+  color: var(--white-color);
 }
 
 [formgroupname].ng-invalid.ng-touched.ng-dirty label,

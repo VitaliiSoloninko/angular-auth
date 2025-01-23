@@ -1,0 +1,29 @@
+.container {
+  width: 1280px;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  gap: 2rem;
+}
+
+.background-image img {
+  height: 100svh;
+  max-width: 100%;
+}
+
+.form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.terms-and-conditions,
+input {
+  font-size: 16px;
+}
+
+span {
+  font-weight: 800;
+}

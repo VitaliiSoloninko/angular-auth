@@ -1,11 +1,20 @@
-.control-row {
-  align-items: flex-end;
+.container {
+  width: 1280px;
 }
 
-.control {
-  flex: 1;
+.body {
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  gap: 2rem;
 }
 
-button {
-  padding: 0.6rem 1.75rem;
+.background-image img {
+  height: 100svh;
+  max-width: 100%;
+}
+
+.form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
