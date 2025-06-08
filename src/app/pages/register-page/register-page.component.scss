@@ -1,27 +1,40 @@
 .container {
-  width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-.body {
-  display: grid;
-  grid-template-columns: 1fr 600px;
-  gap: 2rem;
-}
+// .body {
+//   display: grid;
+//   grid-template-columns: 1fr 600px;
+//   gap: 2rem;
+// }
 
-.background-image img {
-  height: 100svh;
-  max-width: 100%;
-}
+// .background-image img {
+//   height: 100svh;
+//   max-width: 100%;
+// }
 
 .form {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: 3rem;
+}
+
+.line {
+  width: 100%;
+  border-top: 1px solid var(--dark-hover-color);
 }
 
 .terms-and-conditions,
 input {
   font-size: 16px;
+}
+
+.user-email {
+  margin-bottom: 1rem;
 }
 
 span {

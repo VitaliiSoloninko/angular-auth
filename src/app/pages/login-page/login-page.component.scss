@@ -1,20 +1,37 @@
 .container {
-  width: 1280px;
+  max-width: 1280px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .body {
-  display: grid;
-  grid-template-columns: 1fr 600px;
-  gap: 2rem;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.background-image img {
-  height: 100svh;
-  max-width: 100%;
+.half {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .body {
+    flex-direction: column;
+  }
+  .half,
+  .form {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 50%;
+  }
 }

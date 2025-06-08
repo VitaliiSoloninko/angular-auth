@@ -1,53 +1,51 @@
 <div class="container">
-  <div class="body">
-    <div class="background-image">
-      <img src="background-images/image-2.jpg" alt="Background image" />
-    </div>
-    <div class="form">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <h2>Create New Account</h2>
-        <div class="control user-email">
-          <label for="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            [formControl]="form.controls.email"
-          />
-        </div>
-        @if (emailIsInvalid) {
-        <p class="control-error">Please enter a valid email address.</p>
-        }
-
-        <div class="control-row" formGroupName="passwords">
-          <div class="control">
-            <label for="password">Password</label>
+  <div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Create New Account</h2>
+      <div class="form">
+        <div class="control-group personal-data">
+          <h3 class="h3">Personal data</h3>
+          <div class="control user-email">
+            <label for="email">Email</label>
             <input
-              id="password"
-              type="password"
-              name="password"
-              formControlName="password"
+              id="email"
+              type="email"
+              name="email"
+              [formControl]="form.controls.email"
             />
           </div>
+          @if (emailIsInvalid) {
+          <p class="control-error">Please enter a valid email address.</p>
+          }
 
-          <div class="control">
-            <label for="confirm-password">Confirm Password</label>
-            <input
-              id="confirm-password"
-              type="password"
-              name="confirm-password"
-              formControlName="confirmPassword"
-            />
+          <div class="control-row user-password" formGroupName="passwords">
+            <div class="control">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                formControlName="password"
+              />
+            </div>
+
+            <div class="control">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                id="confirm-password"
+                type="password"
+                name="confirm-password"
+                formControlName="confirmPassword"
+              />
+            </div>
           </div>
-        </div>
-        @if (passwordsAreNotSame) {
-        <p class="control-error">
-          Passwords must be at least 6 characters long and the same
-        </p>
-        }
+          @if (passwordsAreNotSame) {
+          <p class="control-error">
+            Passwords must be at least 6 characters long and the same
+          </p>
+          }
 
-        <div>
-          <div class="control-row user-name">
+          <div class="control-row user-names">
             <div class="control">
               <label for="first-name">First Name</label>
               <input
@@ -67,135 +65,127 @@
               />
             </div>
           </div>
+        </div>
 
-          <hr />
-
-          <div class="address" formGroupName="address">
-            <h3 class="h3">Address</h3>
-            <div class="control-row">
-              <div class="control">
-                <label for="street">Street</label>
-                <input
-                  type="text"
-                  id="street"
-                  name="street"
-                  formControlName="street"
-                />
-              </div>
-
-              <div class="control">
-                <label for="number">Number</label>
-                <input
-                  type="text"
-                  id="number"
-                  name="number"
-                  formControlName="number"
-                />
-              </div>
+        <div class="control-group address" formGroupName="address">
+          <h3 class="h3">Address</h3>
+          <div class="control-row">
+            <div class="control">
+              <label for="street">Street</label>
+              <input
+                type="text"
+                id="street"
+                name="street"
+                formControlName="street"
+              />
             </div>
-            <div class="control-row">
-              <div class="control">
-                <label for="postal-code">Postal Code</label>
-                <input
-                  type="text"
-                  id="postal-code"
-                  name="postal-code"
-                  formControlName="postalCode"
-                />
-              </div>
-              <div class="control">
-                <label for="city">City</label>
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  formControlName="city"
-                />
-              </div>
+
+            <div class="control">
+              <label for="number">Number</label>
+              <input
+                type="text"
+                id="number"
+                name="number"
+                formControlName="number"
+              />
+            </div>
+          </div>
+          <div class="control-row">
+            <div class="control">
+              <label for="postal-code">Postal Code</label>
+              <input
+                type="text"
+                id="postal-code"
+                name="postal-code"
+                formControlName="postalCode"
+              />
+            </div>
+            <div class="control">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" formControlName="city" />
             </div>
           </div>
         </div>
 
-        <hr />
-
-        <div class="control-row">
-          <div class="control">
-            <label for="role">What best describes your role?</label>
-            <select id="role" name="role" formControlName="role">
-              <option value="student">Student</option>
-              <option value="teacher">Teacher</option>
-              <option value="employee">Employee</option>
-              <option value="founder">Founder</option>
-              <option value="other">Other</option>
-            </select>
+        <div class="control-group drop-down-list">
+          <h3 class="h3">Additionally</h3>
+          <div class="control-row">
+            <div class="control">
+              <label for="role">What best describes your role?</label>
+              <select id="role" name="role" formControlName="role">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="employee">Employee</option>
+                <option value="founder">Founder</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
           </div>
         </div>
-
-        <div class="check-box-block" formArrayName="source">
-          <h3 class="h3">How did you find us?</h3>
-          <div class="control">
-            <input
-              type="checkbox"
-              id="google"
-              name="acquisition"
-              value="google"
-              formControlName="0"
-            />
-            <label for="google">Google</label>
-          </div>
-
-          <div class="control">
-            <input
-              type="checkbox"
-              id="friend"
-              name="acquisition"
-              value="friend"
-              formControlName="1"
-            />
-            <label for="friend">Referred by friend</label>
-          </div>
-
-          <div class="control">
-            <input
-              type="checkbox"
-              id="other"
-              name="acquisition"
-              value="other"
-              formControlName="2"
-            />
-            <label for="other">Other</label>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="control-row">
-          <div class="control">
-            <label for="terms-and-conditions">
+        <div class="control-group check-box">
+          <div class="check-box-block" formArrayName="source">
+            <label for="role">How did you find us?</label>
+            <div class="control">
               <input
                 type="checkbox"
-                id="terms-and-conditions"
-                name="terms"
-                formControlName="agree"
+                id="google"
+                name="acquisition"
+                value="google"
+                formControlName="0"
               />
-              I agree to the <span>Terms & Conditions</span>
-            </label>
+              <label for="google">Google</label>
+            </div>
+
+            <div class="control">
+              <input
+                type="checkbox"
+                id="friend"
+                name="acquisition"
+                value="friend"
+                formControlName="1"
+              />
+              <label for="friend">Referred by friend</label>
+            </div>
+
+            <div class="control">
+              <input
+                type="checkbox"
+                id="other"
+                name="acquisition"
+                value="other"
+                formControlName="2"
+              />
+              <label for="other">Other</label>
+            </div>
           </div>
         </div>
+      </div>
 
-        <p class="form-actions">
-          <button type="button" class="btn btn-flat" (click)="onReset()">
-            Reset
-          </button>
-          <button type="submit" class="btn">Sign up</button>
-        </p>
+      <div class="control-row">
+        <div class="control">
+          <label for="terms-and-conditions">
+            <input
+              type="checkbox"
+              id="terms-and-conditions"
+              name="terms"
+              formControlName="agree"
+            />
+            I agree to the <span>Terms & Conditions</span>
+          </label>
+        </div>
+      </div>
 
-        @if (form.dirty && form.touched && form.invalid) {
-        <p class="control-error">
-          Invalid form - please check your input data.
-        </p>
-        }
-      </form>
-    </div>
+      <p class="form-actions">
+        <button type="button" class="btn btn-cancel" (click)="onReset()">
+          Reset
+        </button>
+        <button type="submit" class="btn">Sign up</button>
+      </p>
+
+      @if (form.dirty && form.touched && form.invalid) {
+      <p class="control-error">Invalid form - please check your input data.</p>
+      }
+    </form>
   </div>
+  <!-- </div> -->
 </div>

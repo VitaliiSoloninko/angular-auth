@@ -1,32 +1,9 @@
 <div class="container">
   <div class="body">
-    <div class="background-image">
-      <img src="background-images/image-1.jpg" alt="Background image" />
-    </div>
-    <div class="form">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <h2 class="h2">Login</h2>
-        <div class="control">
-          <label for="email">Email Address</label>
-          <input id="email" type="email" [formControl]="form.controls.email" />
-        </div>
+    <app-login-image class="half" />
 
-        <div class="control">
-          <label for="password">Password</label>
-          <input id="password" type="password" formControlName="password" />
-        </div>
-
-        <button class="btn mt16">Login</button>
-
-        @if (emailIsInvalid) {
-        <p class="control-error">Please enter a valid email address.</p>
-        } @if (passwordIsInvalid) {
-        <p class="control-error">
-          Please enter a valid password (must be at least 6 characters long and
-          contain a questing mark).
-        </p>
-        }
-      </form>
+    <div class="form half">
+      <app-login-form />
     </div>
   </div>
 </div>

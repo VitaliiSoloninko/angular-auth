@@ -7,7 +7,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CheckBoxComponent } from '../../ui/check-box/check-box.component';
 
 function equalValues(controlName1: string, controlName2: string) {
   return (control: AbstractControl) => {
@@ -23,7 +22,7 @@ function equalValues(controlName1: string, controlName2: string) {
 
 @Component({
   selector: 'app-register-page',
-  imports: [ReactiveFormsModule, CheckBoxComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.scss',
 })
